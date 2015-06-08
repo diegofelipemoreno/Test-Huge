@@ -23,6 +23,6 @@
     "morgan": "~1.0.0"
   },
   "scripts": {
-  "start": "PORT=80 IP=transparente.ugr.es forever start -l /var/log/forever.log -a -o /var/log/out.log -e /var/log/err.log ./app.js"
+  "start": "PORT=80 IP=test-huge.dm.com forever start -l /var/log/forever.log -a -o /var/log/out.log -e /var/log/err.log ./app.js"
   }
 }

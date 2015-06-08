@@ -21,5 +21,8 @@
   "dependencies": {
     "express": "~4.2.0",
     "morgan": "~1.0.0"
+  },
+  "scripts": {
+  "start": "PORT=80 IP=transparente.ugr.es forever start -l /var/log/forever.log -a -o /var/log/out.log -e /var/log/err.log ./app.js"
   }
 }

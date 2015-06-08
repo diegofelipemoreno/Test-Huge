@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <title>HUGE NavExercise</title>
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="stylesheet" href="../styles/main.css">
+   
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  /* Menu request*/
+		function callMenu(){
+			var menu = 'nav.json';
+			$.ajaxSetup({ cache: false });
+			$.getJSON(menu, function(data) {
+			
+			var out = "";
+			for (i = 0; i < data.items.length; i++) { 
+	 
+			    // console.log(data.items[i]);
+			    var subitem = data.items[i];
+			    
+			    // put  up/down icon if it has a submenu
+			    var menuicon='';
+			    if(data.items[i].items != ""){
+			    	menuicon='class="menuicon" onclick="submenu(menu'+i+')"';
+			    } 
+			   
+			   // print main menu level
+			    out += '<li class="btn-menu"><a href="' + data.items[i].url + '" id="menu'+i+'" '+menuicon+'>'+ data.items[i].label + '</a>';
+				
+			    if(data.items[i].items != ""){
+			    	
+			    	out += '<ul>';
+		
+				    for (j = 0; j < subitem.items.length; j++) { 
+				   
+				    	 //print submenu level
+				    	 //console.log('-'+subitem.items[j].label);	
+				    	 out += '<li class="btn-submenu"><a href="' + subitem.items[j].url + '">' + subitem.items[j].label + '</a></li>'; 	
+				    }	
+				    out += '</ul>';
+				    
+				    out += '</li>';
+			    }  
+			  
+			}
+			document.getElementById("menu").innerHTML = out;
+	
+			}); 
+				
+		}
+		callMenu();
+
+		
+		 /*  menu activated & black mask opacity*/
+		function menuactive(eleclass){
+			  var content = document.getElementById('content');
+			  var menumobile = document.getElementById('menuMobile');
+			 
+		     if( eleclass == "active" || eleclass == 'open' ){
+		      		 content.setAttribute('class', 'content dark');
+		      		 menumobile.setAttribute('class', 'menucontent on');
+			 }else{
+			 		content.setAttribute('class', 'content');
+			 		 menumobile.setAttribute('class', 'menucontent');
+			 		
+			 }
+
+		}
+
+		 /*  submenu  activated from menu*/
+		function submenu (menuid){
+		  var submenus = document.querySelectorAll(".menuicon");		
+		       [].forEach.call(submenus, function(el) {
+		       el.classList.remove("active");		    
+		  }); 
+			 
+		   var active = document.getElementById(menuid.id);
+		    active.setAttribute('class', 'menuicon active');
+
+		}
+		  	
+		/* Reset menu click outside*/
+		 document.addEventListener("click", function(e){ 
+			 var active = document.querySelectorAll(".active");		
+			 if( e.target.className.split(" ")[1] != "active"){
+			 	   [].forEach.call(active, function(el) {
+			      	 el.classList.remove("active");	
+			       }); 
+			 }
+			 menuactive(e.target.className.split(" ")[1]);
+		 });
+  </script>
+	
+</head>
+<body>  
+
+	<nav>	
+		<div id="menuMobile" class="menucontent">
+			<div class="botonera">
+				<a class="logo" href="">Huge</a>
+				<button class="toogle open">menu</button>
+				<button class="toogle close">close</button>
+			</div>
+			<ul id="menu">
+				
+			</ul>
+			<p>© 2014 Huge. All Rights Reserved.</p>
+		</div>
+	</nav>
+	
+	   <section  id="content" class="content">
+	   		<figure></figure>
+			<h1>Get paid for giving a shit.</h1>
+			<figcaption>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+			</figcaption>
+	 </section>
+	
+</body>
+</html>

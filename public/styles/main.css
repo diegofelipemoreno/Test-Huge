@@ -1,0 +1,349 @@
+@import "fonts.css";
+@import "reset.css";
+
+
+nav {
+	width:100%;
+	height: 72px;
+	background: #ec008c;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}	
+
+button.toogle,button.toogle{
+display:none;	
+}	
+
+nav .botonera{
+	  text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+}
+
+nav .menucontent {
+	min-width: 900px;
+}
+
+nav .menucontent a.logo{
+	width: 60px;
+	height: 24px;
+	display: inline-block;
+	background: url("../images/HUGE-white.png") no-repeat 0px 0px;
+	background-size: 60px;
+	margin: 0px 48px 0px 24px;
+	text-indent: -999em;
+}
+
+ nav .menucontent p{
+ 	display:none;	
+ }
+
+ nav .menucontent ul{
+     text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}	
+
+ nav .menucontent ul li.btn-menu{
+ 	display: inline-block;
+ 	text-align: center;
+ 	position: relative;
+ 	min-width: 107px;
+}
+
+
+nav .menucontent ul li.btn-menu a{
+color:white;
+text-decoration:none;
+width: 100%;
+height: 72px;
+display: inline-block;
+padding: 12px;
+box-sizing: border-box;
+position:relative;
+cursor: pointer;
+font-family: 'HUGEAvantGardeBold';
+font-size: 21px;
+line-height: 48px;
+vertical-align: text-bottom;
+}
+
+nav .menucontent ul li.btn-menu a:hover,nav .menucontent ul li a.active{
+  background-color: white;
+  color: #ec008c;
+}
+
+
+nav .menucontent ul li.btn-menu a.menuicon.active + ul{
+	display:block;
+	  z-index: 1;
+}	
+
+ nav .menucontent ul li.btn-menu ul{
+ 	background: white;
+ 	display:none;
+ 	position: absolute;
+ 	width: 200%;
+ 	padding: 12px 0px 0px 0px;
+}
+
+ nav .menucontent ul li.btn-menu ul li.btn-submenu{
+	height: 48px;
+	display:block;
+	clear:both;
+ }	
+
+ nav .menucontent ul li.btn-menu ul li.btn-submenu a{
+   color:black;
+   font-family: 'Galaxie';
+   font-size:16px;
+   line-height: 48px;
+   text-align:left;
+   padding: 0px 0px 0px 24px;
+   box-sizing: border-box;
+   height: inherit;
+}	
+
+nav .menucontent ul li.btn-menu ul li.btn-submenu a:hover{
+   background:#EEE;
+   color:#ec008c;
+}
+ 
+
+ 
+.content{
+  height: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+
+.content.dark{
+	  background: rgba(0, 0, 0, 0.5);
+}	
+
+.content figure{
+	 background: url("../images/background-image.jpg")  no-repeat center 0px;
+	 background-position: initial;
+	 margin: 0 auto;
+	 height: 640px;
+	 margin-bottom: 60px;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
+.content h1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font: 120px HUGEAvantGardeBold;
+  line-height: 132px;
+  letter-spacing: -0.06em;
+  text-align: center;
+  color:white;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.content.dark h1 {
+	color:grey;
+}	
+
+.content figcaption{
+	padding: 0px;
+	margin-bottom: 30px;
+}	
+
+.content figcaption p{
+	margin:0 auto;
+	display:block;
+	clear: both;
+	text-align: left;
+	max-width: 968px;
+	font-family: 'Galaxie';
+	font-size: 24px;
+	line-height: 36px;
+}	
+
+/* MOBILE CSS */
+@media screen and (max-width: 768px) {
+	    nav {
+	    	    background:none;
+	        height: 100%;
+	        top: 0px;
+	        position: fixed;
+	        z-index: 1;
+		}
+	    
+	    
+	    nav .menucontent .botonera{
+	    		  background-color: #ec008c;
+	    
+	    		  height: 60px;
+	    		  display: block;
+	    		  width: 200%;
+}
+	    
+	    nav .menucontent a.logo{
+	    		position: absolute;
+	    		top: 20px;
+	    		left: 0px;
+		
+	    		background-size: 54px;
+}
+	    
+	     nav .menucontent p{
+		 	color:black;
+		 	font-family: 'Galaxie';
+		    font-size:12px;
+		    
+		 	line-height: 16px;
+		 	text-align:center;
+		    display:block;
+		 	padding: 24px 0px;
+		 	width: 86%;   
+		 	background-color: white;
+		}
+	    
+	    button.toogle.open{
+	    	       background: url("../images/toggle-open.svg") no-repeat -20px -22px;
+		     background-size: 65px;
+			  width: 24px;
+			  height: 20px;
+			  margin: 20px 24px;
+		      text-indent: -999em;
+		      border:none;
+		       display: block;
+		       position:absolute;
+		     top: 0px;
+		     right: -72px;
+		}
+		
+		button.toogle.close{
+			 background: url("../images/toggle-close.svg") no-repeat -21px -22px;
+			 background-size: 65px;
+			 width: 24px;
+			 height: 20px;
+			 margin: 20px 24px;
+		     text-indent: -999em;
+		     border:none;
+		     display: block;
+		     position: absolute;
+			 right: 0px;
+		}
+	    
+	    
+	    .content{
+	    		margin-top: 60px;   	
+	    
+		}
+	    
+	    .content figure{
+			 height: 240px;
+			 display: block;
+			 position: relative;
+		
+			 margin-bottom: 90px;
+}
+		
+	    
+	    .content h1 {
+		    		position: relative;
+		    		color:black;
+		
+		    		display: block;
+		    		margin: 0 auto;
+		    		font-size: 44px;
+		    		line-height: 48px;
+		    		text-align: left;
+		    		width: 90%;
+		    		float: left;
+		}
+	    
+	    .content figcaption{
+		    		margin: 0px 24px 30px 24px;
+				
+		}
+		
+		  .content figcaption p{
+		  	font-size:14px;
+		  	line-height:24px;	
+		  }	
+
+		
+		 nav .menucontent {
+			   width: 100%;
+			   min-width: inherit;
+			   height: 100%;
+			   position: relative;
+			   left: -100%;
+			   -webkit-transition: all .5s ease-in-out;
+			  -moz-transition: all .5s ease-in-out;
+			  -o-transition: all .5s ease-in-out;
+			  transition: all .5s ease-in-out;
+		}
+		
+		 nav .menucontent.on {
+		 	  left:0px; 
+		 }	
+		 
+		 nav .menucontent ul{
+		      width: 86%;
+		      height: 86%;
+		      background-color: white;
+		      padding: 12px 0px 0px 0px;
+	}     
+	
+		nav .menucontent ul li.btn-menu {
+		  display: block;
+		  text-align: left;
+	}
+		
+	nav .menucontent ul li.btn-menu a{	
+			height: 48px;
+			padding: 24px;
+			line-height: 5px;
+			box-sizing: border-box;
+			color: black;
+	}
+	
+	nav .menucontent ul li.btn-menu a:hover{	
+		background:#eee;
+	}	
+		
+	nav .menucontent ul li.btn-menu a.menuicon:after{
+			 content: "\e600";
+			font-family: 'huge-fonts';
+			position: absolute;	
+			 right: 15px;
+			 font-size: 14px;
+			 color: #ec008c;
+	}
+	
+	nav .menucontent ul li.btn-menu a.menuicon.active:after{
+			 content: "\e601";
+	}
+		
+		
+	nav .menucontent ul li.btn-menu ul{	
+		  position: relative;
+		  width: 100%;
+	}		
+	    
+}
